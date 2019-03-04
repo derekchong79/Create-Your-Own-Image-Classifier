@@ -1,0 +1,64 @@
+root@fe306510ae72:/home/workspace# cd aipnd-project
+root@fe306510ae72:/home/workspace/aipnd-project# python train.py
+Executing train.py....
+number of testloader data: 224
+Downloading: "https://download.pytorch.org/models/vgg16-397923af.pth" to /root/.torch/models/vgg16-397923af.pth
+100%|████████████████████████████████████████████████████████████████████████████████████████████████████| 553433881/553433881 [00:07<00:00, 73961689.27it/s]
+
+printing the selected architecture vgg16 classifier =
+Sequential(
+  (fc1): Linear(in_features=25088, out_features=4096, bias=True)
+  (relu): ReLU()
+  (dropout): Dropout(p=0.5)
+  (fc2): Linear(in_features=4096, out_features=102, bias=True)
+  (output): LogSoftmax()
+)
+training moves to cuda
+Epoch: 1/10...  Training Loss: 5.0913 Test Loss: 2.127..  Test Accuracy: 0.507
+Epoch: 1/10...  Training Loss: 2.3273 Test Loss: 1.230..  Test Accuracy: 0.676
+Epoch: 1/10...  Training Loss: 1.9165 Test Loss: 0.883..  Test Accuracy: 0.747
+Epoch: 2/10...  Training Loss: 0.8590 Test Loss: 0.850..  Test Accuracy: 0.752
+Epoch: 2/10...  Training Loss: 1.5193 Test Loss: 0.690..  Test Accuracy: 0.813
+Epoch: 2/10...  Training Loss: 1.4351 Test Loss: 0.616..  Test Accuracy: 0.827
+Epoch: 3/10...  Training Loss: 0.1655 Test Loss: 0.612..  Test Accuracy: 0.842
+Epoch: 3/10...  Training Loss: 1.3674 Test Loss: 0.535..  Test Accuracy: 0.867
+Epoch: 3/10...  Training Loss: 1.3255 Test Loss: 0.595..  Test Accuracy: 0.844
+Epoch: 3/10...  Training Loss: 1.3118 Test Loss: 0.526..  Test Accuracy: 0.865
+Epoch: 4/10...  Training Loss: 0.9250 Test Loss: 0.626..  Test Accuracy: 0.832
+Epoch: 4/10...  Training Loss: 1.2030 Test Loss: 0.534..  Test Accuracy: 0.855
+Epoch: 4/10...  Training Loss: 1.2261 Test Loss: 0.480..  Test Accuracy: 0.868
+Epoch: 5/10...  Training Loss: 0.3162 Test Loss: 0.489..  Test Accuracy: 0.870
+Epoch: 5/10...  Training Loss: 1.2185 Test Loss: 0.495..  Test Accuracy: 0.867
+Epoch: 5/10...  Training Loss: 1.1756 Test Loss: 0.519..  Test Accuracy: 0.869
+Epoch: 5/10...  Training Loss: 1.2312 Test Loss: 0.465..  Test Accuracy: 0.887
+Epoch: 6/10...  Training Loss: 0.8937 Test Loss: 0.470..  Test Accuracy: 0.880
+Epoch: 6/10...  Training Loss: 1.2366 Test Loss: 0.488..  Test Accuracy: 0.874
+Epoch: 6/10...  Training Loss: 1.1524 Test Loss: 0.451..  Test Accuracy: 0.881
+Epoch: 7/10...  Training Loss: 0.4787 Test Loss: 0.406..  Test Accuracy: 0.890
+Epoch: 7/10...  Training Loss: 1.0957 Test Loss: 0.536..  Test Accuracy: 0.866
+Epoch: 7/10...  Training Loss: 1.0286 Test Loss: 0.482..  Test Accuracy: 0.875
+Epoch: 7/10...  Training Loss: 1.1315 Test Loss: 0.438..  Test Accuracy: 0.895
+Epoch: 8/10...  Training Loss: 1.0846 Test Loss: 0.507..  Test Accuracy: 0.878
+Epoch: 8/10...  Training Loss: 1.1432 Test Loss: 0.459..  Test Accuracy: 0.895
+Epoch: 8/10...  Training Loss: 1.0688 Test Loss: 0.430..  Test Accuracy: 0.896
+Epoch: 9/10...  Training Loss: 0.5637 Test Loss: 0.438..  Test Accuracy: 0.890
+Epoch: 9/10...  Training Loss: 1.1215 Test Loss: 0.487..  Test Accuracy: 0.872
+Epoch: 9/10...  Training Loss: 1.1482 Test Loss: 0.451..  Test Accuracy: 0.876
+Epoch: 10/10...  Training Loss: 0.1429 Test Loss: 0.489..  Test Accuracy: 0.887
+Epoch: 10/10...  Training Loss: 1.0274 Test Loss: 0.476..  Test Accuracy: 0.884
+Epoch: 10/10...  Training Loss: 1.1587 Test Loss: 0.466..  Test Accuracy: 0.906
+Epoch: 10/10...  Training Loss: 1.0833 Test Loss: 0.441..  Test Accuracy: 0.890
+
+Accuracy of the network on the test images: 87 %
+root@fe306510ae72:/home/workspace/aipnd-project# python predict.py
+Executing predict.py...
+number of cat_to_name:102
+
+output_layers = 102
+training moves to cuda
+
+Top flowers prediction:
+['pink primrose', 'mallow', 'anthurium']
+
+their probabilities:
+[0.9691573977470398, 0.020535042509436607, 0.0036941119469702244]
